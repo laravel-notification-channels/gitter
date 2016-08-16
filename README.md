@@ -74,7 +74,9 @@ public function routeNotificationForGitter()
 ### Available methods
 
 `from()`: Sets the sender's access token.
+
 `room()`: Specifies the room id to send the notification to (overridden by `routeNotificationForGitter` if empty).
+
 `content()`: Sets a content of the notification message. Supports Github flavoured markdown.
 
 ## Changelog
