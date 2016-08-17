@@ -4,7 +4,7 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/laravel-notification-channels/gitter/master.svg?style=flat-square)](https://travis-ci.org/laravel-notification-channels/gitter)
 [![StyleCI](https://styleci.io/repos/65855374/shield)](https://styleci.io/repos/65855374)
-[![SensioLabsInsight](https://img.shields.io/sensiolabs/i/:sensio_labs_id.svg?style=flat-square)](https://insight.sensiolabs.com/projects/:sensio_labs_id)
+[![SensioLabsInsight](https://img.shields.io/sensiolabs/i/f3b9fa9b-2315-4154-b8ad-f2d6661939dd.svg?style=flat-square)](https://insight.sensiolabs.com/projects/f3b9fa9b-2315-4154-b8ad-f2d6661939dd)
 [![Quality Score](https://img.shields.io/scrutinizer/g/laravel-notification-channels/gitter.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/gitter)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/laravel-notification-channels/gitter/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/gitter/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/gitter.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/gitter)
