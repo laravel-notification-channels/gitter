@@ -19,8 +19,8 @@
         "illuminate/support": "^5.1|^5.2|^5.3"
     },
     "require-dev": {
-        "mockery/mockery": "^0.9.5",
-        "phpunit/phpunit": "~4.8|~5"
+        "phpunit/phpunit": "~5",
+        "mockery/mockery": "^0.9.5"
     },
     "autoload": {
         "psr-4": {
