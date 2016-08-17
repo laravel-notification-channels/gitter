@@ -56,7 +56,7 @@ class GitterChannel
         }
 
         $options = [
-            'json'    => $message->content,
+            'json'    => ['text' => $message->content],
             'headers' => [
                 'Authorization' => "Bearer {$message->from}",
             ],
