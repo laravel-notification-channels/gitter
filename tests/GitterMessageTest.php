@@ -2,10 +2,9 @@
 
 namespace NotificationChannels\Gitter\Test;
 
-use Orchestra\Testbench\TestCase;
 use NotificationChannels\Gitter\GitterMessage;
 
-class GitterMessageTest extends TestCase
+class GitterMessageTest extends \PHPUnit_Framework_TestCase
 {
     /** @test */
     public function it_can_accept_a_content_when_constructing_a_message()

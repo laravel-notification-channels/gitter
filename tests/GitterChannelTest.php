@@ -5,13 +5,12 @@ namespace NotificationChannels\Gitter\Test;
 use Mockery;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
-use Orchestra\Testbench\TestCase;
 use Illuminate\Notifications\Notification;
 use NotificationChannels\Gitter\GitterMessage;
 use NotificationChannels\Gitter\GitterChannel;
 use NotificationChannels\Gitter\Exceptions\CouldNotSendNotification;
 
-class GitterChannelTest extends TestCase
+class GitterChannelTest extends \PHPUnit_Framework_TestCase
 {
     public function tearDown()
     {
