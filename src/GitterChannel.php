@@ -3,7 +3,6 @@
 namespace NotificationChannels\Gitter;
 
 use Exception;
-use Illuminate\Support\Arr;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Notifications\Notification;
@@ -36,7 +35,7 @@ class GitterChannel
 
         if (empty($message->room)) {
             $message->room($notifiable->routeNotificationFor('gitter'));
-        };
+        }
 
         $this->sendMessage($message);
     }
@@ -59,8 +58,8 @@ class GitterChannel
         $options = [
             'json'    => $message->content,
             'headers' => [
-                'Authorization' => "Bearer {$message->from}"
-            ]
+                'Authorization' => "Bearer {$message->from}",
+            ],
         ];
 
         try {

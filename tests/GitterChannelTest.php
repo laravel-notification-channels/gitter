@@ -27,7 +27,7 @@ class GitterChannelTest extends \PHPUnit_Framework_TestCase
                 'https://api.gitter.im/v1/rooms/:room/chatMessages',
                 [
                     'json'    => ['text' => 'hello'],
-                    'headers' => ['Authorization' => "Bearer :token"],
+                    'headers' => ['Authorization' => 'Bearer :token'],
                 ]
             )->andReturn(new Response(200));
 
