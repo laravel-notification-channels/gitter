@@ -2,6 +2,7 @@
 
 namespace NotificationChannels\Gitter;
 
+use Exception;
 use Illuminate\Support\Arr;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\ClientException;
@@ -11,6 +12,9 @@ use NotificationChannels\Gitter\Exceptions\CouldNotSendNotification;
 class GitterChannel
 {
     protected $baseUrl = 'https://api.gitter.im/v1/rooms';
+
+    /** @var \GuzzleHttp\Client */
+    protected $httpClient;
 
     public function __construct(HttpClient $client)
     {
@@ -34,36 +38,36 @@ class GitterChannel
             $message->room($notifiable->routeNotificationFor('gitter'));
         };
 
-        $this->sendMessage($message->toArray());
+        $this->sendMessage($message);
     }
 
     /**
-     * @param  array  $message
+     * @param  GitterMessage  $message
      *
      * @throws CouldNotSendNotification
      */
-    protected function sendMessage($message)
+    protected function sendMessage(GitterMessage $message)
     {
-        if (empty($room = Arr::pull($message, 'room'))) {
+        if (empty($message->room)) {
             throw CouldNotSendNotification::missingRoom();
         }
 
-        if (empty($from = Arr::pull($message, 'from'))) {
+        if (empty($message->from)) {
             throw CouldNotSendNotification::missingFrom();
         }
 
         $options = [
-            'json'    => $message,
+            'json'    => $message->content,
             'headers' => [
-                'Authorization' => "Bearer {$from}"
+                'Authorization' => "Bearer {$message->from}"
             ]
         ];
 
         try {
-            $this->httpClient->post("{$this->baseUrl}/{$room}/chatMessages", $options);
+            $this->httpClient->post("{$this->baseUrl}/{$message->room}/chatMessages", $options);
         } catch (ClientException $exception) {
             throw CouldNotSendNotification::gitterRespondedWithAnError($exception);
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             throw CouldNotSendNotification::couldNotCommunicateWithGitter($exception);
         }
     }

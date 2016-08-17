@@ -2,9 +2,7 @@
 
 namespace NotificationChannels\Gitter;
 
-use Illuminate\Contracts\Support\Arrayable;
-
-class GitterMessage implements Arrayable
+class GitterMessage
 {
     /**
      * Gitter room id.
@@ -46,21 +44,19 @@ class GitterMessage implements Arrayable
      */
     public function __construct($content = '')
     {
-        if (! empty($content)) {
-            $this->content($content);
-        }
+        $this->content($content);
     }
 
     /**
      * Set the Gitter room id to send message to.
      *
-     * @param  string  $id
+     * @param  string  $roomId
      *
      * @return $this
      */
-    public function room($id)
+    public function room($roomId)
     {
-        $this->room = $id;
+        $this->room = $roomId;
 
         return $this;
     }
@@ -68,19 +64,19 @@ class GitterMessage implements Arrayable
     /**
      * Set the sender's access token.
      *
-     * @param  string  $from
+     * @param  string  $accessToken
      *
      * @return $this
      */
-    public function from($from)
+    public function from($accessToken)
     {
-        $this->from = $from;
+        $this->from = $accessToken;
 
         return $this;
     }
 
     /**
-     * Set the content of the message. Supports Github flavoured markdown.
+     * Set the content of the message. Supports GitHub flavoured markdown.
      *
      * @param  string  $content
      *
@@ -91,14 +87,5 @@ class GitterMessage implements Arrayable
         $this->content = $content;
 
         return $this;
-    }
-
-    public function toArray()
-    {
-        return [
-            'room' => $this->room,
-            'from' => $this->from,
-            'text' => $this->content,
-        ];
     }
 }

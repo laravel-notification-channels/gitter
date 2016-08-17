@@ -51,6 +51,6 @@ class CouldNotSendNotification extends Exception
      */
     public static function couldNotCommunicateWithGitter(Exception $exception)
     {
-        return new static('The communication with Gitter failed. Reason: '.$exception->getMessage());
+        return new static("The communication with Gitter failed. Reason: {$exception->getMessage()}");
     }
 }

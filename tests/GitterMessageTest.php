@@ -46,18 +46,4 @@ class GitterMessageTest extends TestCase
 
         $this->assertEquals('token', $message->from);
     }
-
-    /** @test */
-    public function it_can_convert_self_to_array()
-    {
-        $message = GitterMessage::create('hello')->from('token')->room('room');
-
-        $params = $message->toArray();
-
-        $this->assertArraySubset($params, [
-            'room' => 'room',
-            'from' => 'token',
-            'text' => 'hello',
-        ]);
-    }
 }
