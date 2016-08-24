@@ -8,15 +8,17 @@
         {
             "name": "JhaoDa",
             "role": "Developer",
-            "email": "jhaoda@gmail.com"
+            "email": "jhaoda@gmail.com",
+            "homepage": "https://github.com/jhaoda"
         }
     ],
     "require": {
         "php": ">=5.6.4",
-        "guzzlehttp/guzzle": "~6.0",
-        "illuminate/notifications": "^5.3",
-        "illuminate/queue": "^5.1|^5.2|^5.3",
-        "illuminate/support": "^5.1|^5.2|^5.3"
+        "guzzlehttp/guzzle": "^6.2",
+        "illuminate/queue": "5.3.*",
+        "illuminate/notifications": "5.3.*",
+        "illuminate/support": "5.1.*|5.2.*|5.3.*"
+
     },
     "require-dev": {
         "phpunit/phpunit": "~5.2",
@@ -37,6 +39,5 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit"
-    },
-    "minimum-stability": "dev"
+    }
 }
