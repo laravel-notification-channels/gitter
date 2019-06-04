@@ -6,8 +6,8 @@ use Mockery;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Notifications\Notification;
-use NotificationChannels\Gitter\GitterMessage;
 use NotificationChannels\Gitter\GitterChannel;
+use NotificationChannels\Gitter\GitterMessage;
 use NotificationChannels\Gitter\Exceptions\CouldNotSendNotification;
 
 class GitterChannelTest extends \PHPUnit_Framework_TestCase
