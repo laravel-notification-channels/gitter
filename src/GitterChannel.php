@@ -12,7 +12,7 @@ class GitterChannel
 {
     protected $baseUrl = 'https://api.gitter.im/v1/rooms';
 
-    /** @var \GuzzleHttp\Client */
+    /** @var HttpClient */
     protected $httpClient;
 
     public function __construct(HttpClient $client)
@@ -23,15 +23,15 @@ class GitterChannel
     /**
      * Send the given notification.
      *
-     * @param mixed $notifiable
-     * @param \Illuminate\Notifications\Notification $notification
+     * @param  mixed  $notifiable
+     * @param  Notification  $notification
      *
-     * @throws \NotificationChannels\Gitter\Exceptions\CouldNotSendNotification
+     * @return void
      */
-    public function send($notifiable, Notification $notification)
+    public function send($notifiable, Notification $notification): void
     {
         /** @var GitterMessage $message */
-        $message = $notification->toGitter($notifiable);
+        $message = $notification->{'toGitter'}($notifiable);
 
         if (empty($message->room)) {
             $message->room($notifiable->routeNotificationFor('gitter'));
@@ -40,12 +40,7 @@ class GitterChannel
         $this->sendMessage($message);
     }
 
-    /**
-     * @param  GitterMessage  $message
-     *
-     * @throws CouldNotSendNotification
-     */
-    protected function sendMessage(GitterMessage $message)
+    protected function sendMessage(GitterMessage $message): void
     {
         if (empty($message->room)) {
             throw CouldNotSendNotification::missingRoom();

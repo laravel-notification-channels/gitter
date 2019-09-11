@@ -5,20 +5,20 @@ namespace NotificationChannels\Gitter\Test;
 use Mockery;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
 use Illuminate\Notifications\Notification;
 use NotificationChannels\Gitter\GitterChannel;
 use NotificationChannels\Gitter\GitterMessage;
 use NotificationChannels\Gitter\Exceptions\CouldNotSendNotification;
 
-class GitterChannelTest extends \PHPUnit_Framework_TestCase
+class GitterChannelTest extends TestCase
 {
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }
 
-    /** @test */
-    public function it_can_send_a_notification()
+    public function test_it_can_send_a_notification(): void
     {
         $client = Mockery::mock(Client::class);
 
@@ -35,8 +35,7 @@ class GitterChannelTest extends \PHPUnit_Framework_TestCase
         $channel->send(new TestNotifiable(), new TestNotification());
     }
 
-    /** @test */
-    public function it_does_not_send_a_message_when_room_missed()
+    public function test_it_does_not_send_a_message_when_room_missed(): void
     {
         $this->expectException(CouldNotSendNotification::class);
 
@@ -44,8 +43,7 @@ class GitterChannelTest extends \PHPUnit_Framework_TestCase
         $channel->send(new TestNotifiable(), new TestNotificationWithMissedRoom());
     }
 
-    /** @test */
-    public function it_does_not_send_a_message_when_from_missed()
+    public function test_it_does_not_send_a_message_when_from_missed(): void
     {
         $this->expectException(CouldNotSendNotification::class);
 

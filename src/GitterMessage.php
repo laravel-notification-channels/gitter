@@ -40,9 +40,9 @@ class GitterMessage
     /**
      * Create a new instance of GitterMessage.
      *
-     * @param $content
+     * @param  string  $content
      */
-    public function __construct($content = '')
+    public function __construct(string $content = '')
     {
         $this->content($content);
     }
@@ -54,7 +54,7 @@ class GitterMessage
      *
      * @return $this
      */
-    public function room($roomId)
+    public function room(string $roomId)
     {
         $this->room = $roomId;
 
@@ -68,7 +68,7 @@ class GitterMessage
      *
      * @return $this
      */
-    public function from($accessToken)
+    public function from(string $accessToken)
     {
         $this->from = $accessToken;
 
@@ -82,7 +82,7 @@ class GitterMessage
      *
      * @return $this
      */
-    public function content($content)
+    public function content(string $content)
     {
         $this->content = $content;
 

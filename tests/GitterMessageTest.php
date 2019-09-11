@@ -2,44 +2,40 @@
 
 namespace NotificationChannels\Gitter\Test;
 
+use PHPUnit\Framework\TestCase;
 use NotificationChannels\Gitter\GitterMessage;
 
-class GitterMessageTest extends \PHPUnit_Framework_TestCase
+class GitterMessageTest extends TestCase
 {
-    /** @test */
-    public function it_can_accept_a_content_when_constructing_a_message()
+    public function test_it_can_accept_a_content_when_constructing_a_message(): void
     {
         $message = new GitterMessage('hello');
 
         $this->assertEquals('hello', $message->content);
     }
 
-    /** @test */
-    public function it_can_accept_a_content_when_creating_a_message()
+    public function test_it_can_accept_a_content_when_creating_a_message(): void
     {
         $message = GitterMessage::create('hello');
 
         $this->assertEquals('hello', $message->content);
     }
 
-    /** @test */
-    public function it_can_set_the_content()
+    public function test_it_can_set_the_content(): void
     {
         $message = (new GitterMessage())->content('hello');
 
         $this->assertEquals('hello', $message->content);
     }
 
-    /** @test */
-    public function it_can_set_the_room()
+    public function test_it_can_set_the_room(): void
     {
         $message = (new GitterMessage())->room('room');
 
         $this->assertEquals('room', $message->room);
     }
 
-    /** @test */
-    public function it_can_set_the_from()
+    public function test_it_can_set_the_from(): void
     {
         $message = (new GitterMessage())->from('token');
 

@@ -27,10 +27,16 @@ This package makes it easy to send notifications using [Gitter.im](//gitter.im) 
 
 ## Installation
 
-You can install the package via composer:
+Install this package with Composer:
 
 ```bash
 composer require laravel-notification-channels/gitter
+```
+
+If you're using Laravel 5.x you'll also need to specify a version constraint:
+
+```bash
+composer require laravel-notification-channels/gitter -v 1.0.1
 ```
 
 ### Setting up the Gitter service
