@@ -1,6 +1,6 @@
 {
     "name": "laravel-notification-channels/gitter",
-    "description": "Gitter Notifications channel for Laravel 5.3",
+    "description": "Gitter Notifications channel for Laravel",
     "keywords": ["laravel", "notifications", "gitter.im"],
     "homepage": "https://github.com/laravel-notification-channels/gitter",
     "license": "MIT",
@@ -13,11 +13,11 @@
         }
     ],
     "require": {
-        "php": "^7.2",
+        "php": "^7.2.5",
         "guzzlehttp/guzzle": "^6.2",
-        "illuminate/queue": "5.1 - 5.8|^6.0",
-        "illuminate/notifications": "5.1 - 5.8|^6.0",
-        "illuminate/support": "5.1 - 5.8|^6.0"
+        "illuminate/queue": "5.5 - 5.8 || ^6.0 || ^7.0",
+        "illuminate/notifications": "5.5 - 5.8 || ^6.0 || ^7.0",
+        "illuminate/support": "5.5 - 5.8 || ^6.0 || ^7.0"
 
     },
     "require-dev": {

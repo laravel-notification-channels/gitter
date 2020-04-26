@@ -1,4 +1,4 @@
-# Gitter.im notifications channel for Laravel 5.3+
+# Gitter.im notifications channel for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/gitter.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/gitter)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
@@ -9,7 +9,7 @@
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/laravel-notification-channels/gitter/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/gitter/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/gitter.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/gitter)
 
-This package makes it easy to send notifications using [Gitter.im](//gitter.im) with Laravel 5.3.
+This package makes it easy to send notifications using [Gitter.im](//gitter.im) with Laravel 5.5+, 6.x & 7.x.
 
 ## Contents
 
