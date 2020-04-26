@@ -2,8 +2,8 @@
 
 namespace NotificationChannels\Gitter\Test;
 
-use PHPUnit\Framework\TestCase;
 use NotificationChannels\Gitter\GitterMessage;
+use PHPUnit\Framework\TestCase;
 
 class GitterMessageTest extends TestCase
 {

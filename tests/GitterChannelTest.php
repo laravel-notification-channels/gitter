@@ -2,14 +2,14 @@
 
 namespace NotificationChannels\Gitter\Test;
 
-use Mockery;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\TestCase;
 use Illuminate\Notifications\Notification;
+use Mockery;
+use NotificationChannels\Gitter\Exceptions\CouldNotSendNotification;
 use NotificationChannels\Gitter\GitterChannel;
 use NotificationChannels\Gitter\GitterMessage;
-use NotificationChannels\Gitter\Exceptions\CouldNotSendNotification;
+use PHPUnit\Framework\TestCase;
 
 class GitterChannelTest extends TestCase
 {
