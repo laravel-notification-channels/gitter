@@ -2,6 +2,10 @@
 
 All notable changes to `gitter` will be documented in this file
 
+## 2.2.0 - 2020-09-12
+
+- Laravel 8
+
 ## 2.1.0 - 2020-04-26
 
 - Laravel 7.x
